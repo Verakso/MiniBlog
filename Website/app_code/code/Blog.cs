@@ -21,6 +21,7 @@ public static class Blog
         Image = ConfigurationManager.AppSettings.Get("blog:image");
         ModerateComments = bool.Parse(ConfigurationManager.AppSettings.Get("blog:moderateComments"));
         BlogPath = ConfigurationManager.AppSettings.Get("blog:path");
+        FirstPostYear = ConfigurationManager.AppSettings.Get("blog:firstpostyear");
     }
 
     public static string Title { get; private set; }
@@ -31,6 +32,7 @@ public static class Blog
     public static int DaysToComment { get; private set; }
     public static bool ModerateComments { get; private set; }
     public static string BlogPath { get; private set; }
+    public static string FirstPostYear { get; private set; }
 
     public static string CurrentSlug
     {

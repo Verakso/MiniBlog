@@ -80,9 +80,15 @@
                     <p>
                         Also – use at your own risk, do not held me responsible for any bad tips &amp; tricks.
                     </p>
-
-
-                    </p>
+                </section>
+                <section>
+                    <h3>Categories</h3>
+                    <ul>
+                        @foreach (var cat in Blog.GetCategories())
+                        {
+                            <li><a href="~/category/@HttpUtility.UrlEncode(cat.Key.ToLowerInvariant())">@cat.Key (@cat.Value)</a></li>
+                        }
+                    </ul>
                 </section>
                 <!-- not used yet 
                 <section>
@@ -106,7 +112,7 @@
             </span>
         }
         <span>
-            Copyright &copy; 2016 &ndash; @DateTime.Now.Year
+            Copyright &copy; @Blog.FirstPostYear &ndash; @DateTime.Now.Year
             <a href="http://about.me/verakso" itemprop="url name">Thomas V. Nielsen</a>
         </span>
     </footer>
